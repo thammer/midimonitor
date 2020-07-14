@@ -1,0 +1,47 @@
+Some leftover code snippets that may or may not come in handy later on
+----------------------------------------------------------------------
+
+
+                    #log {height:200px; width:100%; overflow-y:auto; }
+
+        
+        <h2>Log</h2>
+        <div id="log" ></div>
+
+            var logdisplay = document.getElementById("log");
+            logdisplay.innerHTML="";
+
+            function log(text)
+            {   
+                if (disableLog) return;
+                if (logdisplay.innerHTML !== "") logdisplay.innerHTML += "<br/>";
+                logdisplay.innerHTML += text;
+                logdisplay.scrollTop = logdisplay.scrollHeight;
+            }
+
+            if (navigator.requestMIDIAccess)
+            {
+                log("You have MIDI");
+            } else {
+                log("You don't have MIDI");
+            }
+
+                    //log("Port: " + port.name + " Timestamp: " + timestamp.toFixed(2) + " Status: " + event.data[0] + " Data1: " + event.data[1] + " Data 2: " + event.data[2] + 
+                    //    " Channel: " + channel + " Note: " + notename + " Event: " + command2Name(command));
+
+
+                console.log("Number of inputs: " + midiAccess.inputs.size);
+
+                midiAccess.inputs.forEach(function(input, key) {
+                    console.log( "Input port [type:'" + input.type + "'] id:'" + input.id +
+                        "' manufacturer:'" + input.manufacturer + "' name:'" + input.name +
+                        "' version:'" + input.version + "'" );
+                });
+
+                midiAccess.outputs.forEach(function(output, key) {
+                    console.log( "Output port [type:'" + output.type + "'] id:'" + output.id +
+                    "' manufacturer:'" + output.manufacturer + "' name:'" + output.name +
+                    "' version:'" + output.version + "'" ); 
+                });
+
+
