@@ -184,10 +184,11 @@
                 ports.forEach(function(port, key) {
                     if (port.connection !== "open")
                     {
+                        console.log("Adding event listener for port: " + port.name);
                         port.open();
-                        port.addEventListener("midimessage", function(event) {
+                        port.onmidimessage = function(event) {
                             midiMessageReceived(port, event)
-                        });
+                        };
                     }
                 });
                 ports = midiAccess.outputs;
