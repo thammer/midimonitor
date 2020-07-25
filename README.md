@@ -7,11 +7,20 @@ Midimonitor is a single page and single file web application with no external de
 
 This is the first web application I created using the WebMIDI API, so it's been my way of learning this API.
 
+## Tips and tricks
+If you're working with MIDI software development (WebMIDI or native applications), running a MIDI loopback adapter together with this midimonitor is really useful for debugging / monitoring the MIDI messages you send. On Windows, I recommend https://www.tobias-erichsen.de/software/loopmidi.html.
+
+A good native Windows application for monitoring MIDI messages is MIDI-OX - http://www.midiox.com.
+
 ## Todo
+- [ ] Display CC type (rename note column to misc, move to the right, use for CC), from https://www.midi.org/specifications-old/item/table-3-control-change-messages-data-bytes-2
+- [ ] Display NRPN-messages (in the new misc column, only for the last CC value, perhaps)
 - [ ] Enable message filters (checkboxes)
 - [ ] Display MIDI activity as colored circle
 - [ ] Support MIDI tempo
 - [ ] Support System Real-Time and System Common messages
+- [ ] Support lots of midi inputs and outputs without cluttering the display, e.g. by letting user collapse list, and/or make a more compact list / grid
+- [ ] Create node.js-version, using https://jazz-soft.net/doc/JZZ/webmidi.html
 
 ## Misc useful links
 - https://webaudio.github.io/web-midi-api/  
